@@ -134,7 +134,7 @@
           var lunar;
 
           var now = new Date();
-          var end = new Date(2020,8,31);
+          var end = new Date(2020,9,30);
           var daysList = [];
           var tenCommandmentsDays = [];
           for (var d = now; d <= end; d.setDate(d.getDate() + 1)) {
@@ -147,7 +147,7 @@
 
               var lunarDay = lunar.lunarDay;
               if (lunarDay === 8 || lunarDay === 14 || lunarDay === 15 || lunarDay === 23 || lunarDay === 29 || lunarDay === 30 ||
-              lunarDay === 1 || lunarDay === 18 || lunarDay === 24 || lunarDay === 28) {
+                  lunarDay === 1 || lunarDay === 18 || lunarDay === 24 || lunarDay === 28) {
                   tenCommandmentsDays.push(new Date(d));
                   var dateToInsert = solar.solarYear.toString() + '-' + solar.solarMonth.toString() + '-' + solar.solarDay.toString();
                   appendPre('add this day: ' + dateToInsert);
