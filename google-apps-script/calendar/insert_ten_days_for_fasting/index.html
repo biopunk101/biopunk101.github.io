@@ -17,8 +17,8 @@
 
     <script type="text/javascript">
       // Client ID and API key from the Developer Console
-      var CLIENT_ID = '799399871421-13ct7erimc8lpc8se16a5dvuqanl9llf.apps.googleusercontent.com';
-      var API_KEY = 'AIzaSyCu7FsHc6_aWIkZ_-kVVy2rRHajJc36jhc';
+      var CLIENT_ID = '789367393415-ffre0a2vjpo49314b61on9ujce1jnql0.apps.googleusercontent.com';
+      var API_KEY = 'AIzaSyAirKh3J26DM29WcUdjh20eln9NApj3pJ0';
 
       // Array of API discovery doc URLs for APIs used by the quickstart
       var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
@@ -122,7 +122,7 @@
       function insertEvents(dateToInsert) {
 
           var event = {
-            'summary': '六齋日',
+            'summary': '十齋日',
             'start': {
                 'date': dateToInsert
             },
@@ -131,7 +131,7 @@
             }
         };
         gapi.client.calendar.events.insert({
-          'calendarId': 'u6gdk601sn7ukd3r2irl6au5sg@group.calendar.google.com',
+          'calendarId':'l9g213hdrd6u5dhivvdfrmuuf4@group.calendar.google.com',
           'resource': event
         }).then(function(response) {
             appendPre('Event created: ' + response.result.htmlLink);
@@ -159,7 +159,8 @@
 
           var lunarDay = lunar.lunarDay;
 
-          if (lunarDay === 8 || lunarDay === 14 || lunarDay === 15 || lunarDay === 23 || lunarDay === 29 || lunarDay === 30) {
+          if (lunarDay === 8 || lunarDay === 14 || lunarDay === 15 || lunarDay === 23 || lunarDay === 29 || lunarDay === 30 ||
+              lunarDay === 1 || lunarDay === 18 || lunarDay === 24 || lunarDay === 28) {
               sixCommandmentsDays.push(new Date(d));
               var dateToInsert = solar.solarYear.toString() + '-' + solar.solarMonth.toString() + '-' + solar.solarDay.toString();
               appendPre('add this day: ' + dateToInsert);
