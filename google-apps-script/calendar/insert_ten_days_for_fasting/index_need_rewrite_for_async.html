@@ -126,7 +126,7 @@
         });
       }
 
-      function insertSixCommandmentDays() {
+      function insertTenCommandmentDays() {
 
           var converter = new LunarSolarConverter();
 
@@ -134,7 +134,7 @@
           var lunar;
 
           var now = new Date();
-          var end = new Date(2099,12,31);
+          var end = new Date(2020,8,31);
           var daysList = [];
           var tenCommandmentsDays = [];
           for (var d = now; d <= end; d.setDate(d.getDate() + 1)) {
