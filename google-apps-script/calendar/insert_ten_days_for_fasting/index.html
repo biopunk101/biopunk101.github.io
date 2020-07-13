@@ -68,7 +68,7 @@
         if (isSignedIn) {
           authorizeButton.style.display = 'none';
           signoutButton.style.display = 'block';
-          insertNextSixCommandmentDay();
+          insertNextTenCommandmentDay();
         } else {
           authorizeButton.style.display = 'block';
           signoutButton.style.display = 'none';
@@ -107,10 +107,9 @@
       var lunar;
 
       var now = new Date();
-      //var end = new Date(2020,5,31);
-      var end = new Date(2099,11,31);
+      var end = new Date(2020,08,31);
       var daysList = [];
-      var sixCommandmentsDays = [];
+      var tenCommandmentsDays = [];
 
       var d = now;
 
@@ -136,13 +135,13 @@
         }).then(function(response) {
             appendPre('Event created: ' + response.result.htmlLink);
             d.setDate(d.getDate() + 1);
-            insertNextSixCommandmentDay();
+            insertNextTenCommandmentDay();
         }).catch(e => {
             console.log('There has been a problem with the operation: ' + e.message);
         });
       }
 
-      function insertNextSixCommandmentDay() {
+      function insertNextTenCommandmentDay() {
 
           if (d>end) {
               appendPre('Done');
@@ -161,13 +160,13 @@
 
           if (lunarDay === 8 || lunarDay === 14 || lunarDay === 15 || lunarDay === 23 || lunarDay === 29 || lunarDay === 30 ||
               lunarDay === 1 || lunarDay === 18 || lunarDay === 24 || lunarDay === 28) {
-              sixCommandmentsDays.push(new Date(d));
+              tenCommandmentsDays.push(new Date(d));
               var dateToInsert = solar.solarYear.toString() + '-' + solar.solarMonth.toString() + '-' + solar.solarDay.toString();
               appendPre('add this day: ' + dateToInsert);
               insertEvents(dateToInsert);
           } else {
               d.setDate(d.getDate() + 1);
-              insertNextSixCommandmentDay();
+              insertNextTenCommandmentDay();
           }
       }
 
